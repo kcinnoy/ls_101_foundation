@@ -1,0 +1,1 @@
+kernel.puts('hello world')
