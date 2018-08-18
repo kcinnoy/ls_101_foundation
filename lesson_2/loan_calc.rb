@@ -87,7 +87,7 @@ loop do
   break unless new_calc.downcase.start_with?('y')
 end
 
-msg_to_user "Thank you for using the Mortgage Calculator!"
+msg_to_user "Thank you for using the Loan Calculator!"
 msg_to_user "Good bye!"
 
 
