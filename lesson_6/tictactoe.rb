@@ -4,6 +4,9 @@ INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
 
+player_score = 0
+computer_score = 0
+
 def prompt(msg)
   puts "=> #{msg}"
 end
@@ -81,14 +84,17 @@ def detect_winner(brd)
        brd[line[1]] == PLAYER_MARKER &&
        brd[line[2]] == PLAYER_MARKER
       return 'Player'
+      player_score += 1
     elsif brd[line[0]] == COMPUTER_MARKER &&
           brd[line[1]] == COMPUTER_MARKER &&
           brd[line[2]] == COMPUTER_MARKER
       return 'Computer'
+      computer_score += 1
     end
   end
   nil
 end
+
 
 loop do
   board = initialize_board
@@ -111,6 +117,7 @@ loop do
     prompt "It's a tie"
   end
 
+  prompt "Player score: #{player_score} /n Computer score: #{computer_score}"
   prompt "play again (y/n)"
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
